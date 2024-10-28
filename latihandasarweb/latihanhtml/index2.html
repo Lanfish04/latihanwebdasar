@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Form</title>
+    <style>
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Hasil Data Diri</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Jabatan</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Data akan ditambahkan di sini -->
+        </tbody>
+    </table>
+
+    <script>
+        // Mengambil data dari localStorage
+        const dataDiriList = JSON.parse(localStorage.getItem("dataDiriList")) || [];
+
+        // Fungsi untuk menambahkan data ke dalam tabel
+        const tableBody = document.getElementById("tableBody");
+        dataDiriList.forEach(function(data) {
+            const row = document.createElement("tr");
+
+            const nameCell = document.createElement("td");
+            nameCell.textContent = data.kolomNama;
+            row.appendChild(nameCell);
+
+            const emailCell = document.createElement("td");
+            emailCell.textContent = data.Email;
+            row.appendChild(emailCell);
+
+            const jabatanCell = document.createElement("td");
+            jabatanCell.textContent = data.Role;
+            row.appendChild(jabatanCell);
+
+            const genderCell = document.createElement("td");
+            genderCell.textContent = data.gender;
+            row.appendChild(genderCell);
+
+            tableBody.appendChild(row);
+        });
+    </script>
+</body>
+</html>

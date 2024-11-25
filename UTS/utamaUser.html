@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .dashboard-header {
+            background-color: #343a40;
+            color: white;
+            padding-top: 80px; /* Adjust to account for fixed navbar height */
+        }
+        .welcome-text {
+            font-size: 1.5rem;
+        }
+        .feature-card {
+            border: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="utama.html">
+                <img src="assets/awslogo.png" alt="AWS Logo" height="50"> 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link ms-3 active" href="#Home">Home</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-3" href="#Product">Product</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-3" href="#About">About Us</a>
+                    </li>
+                </ul>
+                <form class="d-flex ms-auto">
+                    <button id="logoutBtn" class="btn btn-outline-warning" type="button">Logout</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <header class="dashboard-header text-center">
+        <div class="container">
+            <h1>Welcome to Your Dashboard</h1>
+            <p class="welcome-text">Hello, <strong>User1</strong>
+        </div>
+    </header>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <img src="assets/profile.jpg" alt="Profile Picture" class="rounded-circle mb-3" style="width: 150px; height: 150px;">
+                        <h3>User1</h3>
+                        <p>Email: user123@gmail.com</p>
+                        <a href="#" class="btn btn-primary mt-2">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <h3>Recent Activities</h3>
+                        <a href="#" class="btn btn-link mt-3">View All Activities</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <h4>EC2 Instances</h4>
+                        <p>Manage and monitor your virtual machines.</p>
+                        <a href="#" class="btn btn-primary">Go to EC2</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <h4>Lambda Functions</h4>
+                        <p>Check your serverless functions and logs.</p>
+                        <a href="#" class="btn btn-warning">Go to Lambda</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <h4>ECS Clusters</h4>
+                        <p>Manage your container orchestration tasks.</p>
+                        <a href="#" class="btn btn-success">Go to ECS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-2">
+      <p>&copy; Copyright by 22552011051_Fadhlan Hafidz Shihran</p>
+  </footer>
+  
+      <script>
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+          window.location.href = "login.html";
+        });
+      </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
